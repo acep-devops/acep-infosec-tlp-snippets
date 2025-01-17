@@ -5,6 +5,8 @@
 
 ## TLP 2.0 Banner Snippets
 
+![TLPBanners](TLP-Banners.png)
+```
 <a title="TLP:RED - Not for disclosure, restricted to participants only." href="https://www.cisa.gov/news-events/news/traffic-light-protocol-tlp-definitions-and-usage" target="_blank" style="text-decoration: none;">
     <div id="tlp-red-banner" style="position: relative; width: 100%; left: calc(-1 * var(--body-margin-left, 0px)); padding: 0px;">
         <div id="tlp-red-banner-content" style="display: flex; gap: 10px; align-items: center; left; margin: 0px; padding: 10px; color: #FFFFFF; background-color: #ffffff; border: 1px solid #000000;">
@@ -77,6 +79,7 @@
         </div>
     </div>
 </a>
+```
 
 ## TLP Color Chart
 
