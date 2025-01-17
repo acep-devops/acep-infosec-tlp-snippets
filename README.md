@@ -5,6 +5,8 @@
 
 ## TLP 2.0 Banner Snippets
 
+Place the approppriate TLP banner at the top and bottom (header and footer) of senstive content pages to communicate content sharing restrictions.
+
 ![TLPBanners](TLP-Banners.png)
 ```
 <a title="TLP:RED - Not for disclosure, restricted to participants only." href="https://www.cisa.gov/news-events/news/traffic-light-protocol-tlp-definitions-and-usage" target="_blank" style="text-decoration: none;">
