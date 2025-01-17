@@ -7,7 +7,9 @@
 
 Place the approppriate TLP banner at the top and bottom (header and footer) of senstive content pages to communicate content sharing restrictions.
 
-![TLPBanners](TLP-Banners.png)
+![TLP:RED](TLP-RED.png)
+
+Not for disclosure, restricted to participants only.
 ```
 <a title="TLP:RED - Not for disclosure, restricted to participants only." href="https://www.cisa.gov/news-events/news/traffic-light-protocol-tlp-definitions-and-usage" target="_blank" style="text-decoration: none;">
     <div id="tlp-red-banner" style="position: relative; width: 100%; left: calc(-1 * var(--body-margin-left, 0px)); padding: 0px;">
@@ -21,9 +23,12 @@ Place the approppriate TLP banner at the top and bottom (header and footer) of s
         </div>
     </div>
 </a>
+```
 
-<br>
+![TLP:AMBER+STRICT](TLP-AMBER-STRICT.png)
 
+Limited disclosure, restricted to participants’ organization.
+```
 <a title="TLP:AMBER+STRICT - Limited disclosure, restricted to participants’ organization." href="https://www.cisa.gov/news-events/news/traffic-light-protocol-tlp-definitions-and-usage" target="_blank" style="text-decoration: none;">
     <div id="tlp-amber-strict-banner" style="position: relative; width: 100%; left: calc(-1 * var(--body-margin-left, 0px)); padding: 0px;">
         <div id="tlp-amber-strict-banner-content" style="display: flex; gap: 10px; align-items: center; left; margin: 0px; padding: 10px; color: #FFFFFF; background-color: #ffffff; border: 1px solid #000000;">
@@ -36,9 +41,12 @@ Place the approppriate TLP banner at the top and bottom (header and footer) of s
         </div>
     </div>
 </a>
+```
 
-<br>    
+![TLP:AMBER](TLP-AMBER.png)
 
+Limited disclosure, restricted to participants’ organization and its clients (see Terminology Definitions).
+```
 <a title="TLP:AMBER - Limited disclosure, restricted to participants’ organization and its clients (see Terminology Definitions)." href="https://www.cisa.gov/news-events/news/traffic-light-protocol-tlp-definitions-and-usage" target="_blank" style="text-decoration: none;">
     <div id="tlp-amber-banner" style="position: relative; width: 100%; left: calc(-1 * var(--body-margin-left, 0px)); padding: 0px;">
         <div id="tlp-amber-banner-content" style="display: flex; gap: 10px; align-items: center; left; margin: 0px; padding: 10px; color: #FFFFFF; background-color: #ffffff; border: 1px solid #000000;">
@@ -51,9 +59,12 @@ Place the approppriate TLP banner at the top and bottom (header and footer) of s
         </div>
     </div>
 </a>
+```
 
-<br>    
+![TLP:GREEN](TLP-GREEN.png)
 
+Limited disclosure, restricted to the community.
+```
 <a title="TLP:GREEN - Limited disclosure, restricted to the community." href="https://www.cisa.gov/news-events/news/traffic-light-protocol-tlp-definitions-and-usage" target="_blank" style="text-decoration: none;">
     <div id="tlp-green-banner" style="position: relative; width: 100%; left: calc(-1 * var(--body-margin-left, 0px)); padding: 0px;">
         <div id="tlp-green-banner-content" style="display: flex; gap: 10px; align-items: center; left; margin: 0px; padding: 10px; color: #FFFFFF; background-color: #ffffff; border: 1px solid #000000;">
@@ -66,9 +77,12 @@ Place the approppriate TLP banner at the top and bottom (header and footer) of s
         </div>
     </div>
 </a>
+```
 
-<br>    
+![TLP:CLEAR](TLP-CLEAR.png)
 
+ Disclosure is not limited.
+```
 <a title="TLP:CLEAR - Disclosure is not limited." href="https://www.cisa.gov/news-events/news/traffic-light-protocol-tlp-definitions-and-usage" target="_blank" style="text-decoration: none;">
     <div id="tlp-clear-banner" style="position: relative; width: 100%; left: calc(-1 * var(--body-margin-left, 0px)); padding: 0px;">
         <div id="tlp-clear-banner-content" style="display: flex; gap: 10px; align-items: center; left; margin: 0px; padding: 10px; color: #FFFFFF; background-color: #ffffff; border: 1px solid #000000;">
@@ -82,6 +96,9 @@ Place the approppriate TLP banner at the top and bottom (header and footer) of s
     </div>
 </a>
 ```
+
+
+---
 
 ## TLP Color Chart
 
