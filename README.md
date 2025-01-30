@@ -3,6 +3,9 @@
 - [Traffic Light Protocol TLP-Banners/TLP) 2.0](https://www.cisa.gov/news-events/news/traffic-light-protocol-tlp-definitions-and-usage)
 - [TLP Users Guide 2.0](https://www.cisa.gov/sites/default/files/2023-02/tlp-2-0-user-guide_508c.pdf)
 
+The [Traffic Light Protocol (TLP)](https://en.wikipedia.org/wiki/Traffic_Light_Protocol) is a system for classifying sensitive information created in the early 2000s by the UK Government's National Infrastructure Security Co-ordination Centre, in order to encourage greater sharing of sensitive information.  And was adopted by the U.S. Cybersecurity & Infrastructure Security Agency (CISA) in [2022](https://www.cisa.gov/news-events/news/traffic-light-protocol-tlp-definitions-and-usage).
+
+ACEP faculty, staff and students should add the respective TLP banner to the **header** and **footer** of documents containing sensitive information to clearly indicate acceptable audiences for which the information in the document can be shared.
 
 ## ACEP TLP 2.0 Banner Snippets
 
