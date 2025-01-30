@@ -6,6 +6,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
         <title>ACEP TLP 2.0 Banner Snippets</title>
 
     </head>
@@ -27,8 +28,8 @@
                     <!-- Right section: Logos -->
                     <div style="display: flex; gap: 10px; align-items: center;">
                         <p style="font-size: 11pt; font-family: Helvetica, Arial, sans-serif; color: #000000; padding: 8px;">Disclosure is not limited.</p>
-                        <a title="Alaska Center for Energy and Power" href="https://acep.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="ACEPLogo.png" alt="ACEP Logo" style="height: 30px; width: auto;"></a>
-                        <a title="University of Alaska Fairbanks" href="https://www.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="uaflogoBlue.png" alt="UAF Logo" style="height: 30px; width: auto;"></a>
+                        <a title="Alaska Center for Energy and Power" href="https://acep.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="img/ACEPLogo.png" alt="ACEP Logo" style="height: 30px; width: auto;"></a>
+                        <a title="University of Alaska Fairbanks" href="https://www.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="img/uaflogoBlue.png" alt="UAF Logo" style="height: 30px; width: auto;"></a>
                     </div>
                 </div>
             </div>
@@ -60,14 +61,62 @@
                     <!-- Right section: Logos -->
                     <div style="display: flex; gap: 10px; align-items: center;">
                         <p style="font-size: 11pt; font-family: Helvetica, Arial, sans-serif; color: #FF2B2B; padding: 8px;">Not for disclosure, restricted to participants only.</p>
-                        <a title="Alaska Center for Energy and Power" href="https://acep.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="ACEPLogo.png" alt="ACEP Logo" style="height: 30px; width: auto;"></a>
-                        <a title="University of Alaska Fairbanks" href="https://www.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="uaflogoBlue.png" alt="UAF Logo" style="height: 30px; width: auto;"></a>
+                        <a title="Alaska Center for Energy and Power" href="https://acep.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="img/ACEPLogo.png" alt="ACEP Logo" style="height: 30px; width: auto;"></a>
+                        <a title="University of Alaska Fairbanks" href="https://www.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="img/uaflogoBlue.png" alt="UAF Logo" style="height: 30px; width: auto;"></a>
                     </div>
                 </div>
             </div>
         </a>
      
         <br>
+
+        <button onclick="captureTLPRED()">Download TLP:RED Banner PNG</button>
+
+        <script>
+            function captureTLPRED() {
+                let div = document.getElementById("tlp-red-banner");
+    
+                // Ensure images are loaded before capturing
+                let images = div.getElementsByTagName("img");
+                let loadedImages = 0;
+    
+                function checkImagesLoaded() {
+                    loadedImages++;
+                    if (loadedImages === images.length) {
+                        html2canvas(div, {useCORS: true}).then(canvas => {
+                            let imgData = canvas.toDataURL("image/png");
+                            let link = document.createElement("a");
+                            link.href = imgData;
+                            link.download = "acep-tlp-red-banner.png";
+                            link.click();
+                        });
+                    }
+                }
+    
+                if (images.length === 0) {
+                    // No images, proceed with capture
+                    html2canvas(div, {useCORS: true}).then(canvas => {
+                        let imgData = canvas.toDataURL("image/png");
+                        let link = document.createElement("a");
+                        link.href = imgData;
+                        link.download = "acep-tlp-red-banner.png";
+                        link.click();
+                    });
+                } else {
+                    // Wait for images to load
+                    for (let img of images) {
+                        if (img.complete) {
+                            checkImagesLoaded();
+                        } else {
+                            img.onload = checkImagesLoaded;
+                            img.onerror = checkImagesLoaded;
+                        }
+                    }
+                }
+            }
+        </script>
+
+        <br><br>
 
         <a title="TLP:AMBER+STRICT - Limited disclosure, restricted to participants’ organization." href="https://www.cisa.gov/news-events/news/traffic-light-protocol-tlp-definitions-and-usage" target="_blank" style="text-decoration: none;">
             <div id="tlp-amber-strict-banner" style="position: relative; width: 100%; left: calc(-1 * var(--body-margin-left, 0px)); padding: 0px;">
@@ -86,14 +135,62 @@
                     <!-- Right section: Logos -->
                     <div style="display: flex; gap: 10px; align-items: center;">
                         <p style="font-size: 11pt; font-family: Helvetica, Arial, sans-serif; color: #FFC000; padding: 8px;">Limited disclosure, restricted to participants’ organization.</p>
-                        <a title="Alaska Center for Energy and Power" href="https://acep.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="ACEPLogo.png" alt="ACEP Logo" style="height: 30px; width: auto;"></a>
-                        <a title="University of Alaska Fairbanks" href="https://www.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="uaflogoBlue.png" alt="UAF Logo" style="height: 30px; width: auto;"></a>
+                        <a title="Alaska Center for Energy and Power" href="https://acep.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="img/ACEPLogo.png" alt="ACEP Logo" style="height: 30px; width: auto;"></a>
+                        <a title="University of Alaska Fairbanks" href="https://www.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="img/uaflogoBlue.png" alt="UAF Logo" style="height: 30px; width: auto;"></a>
                     </div>
                 </div>
             </div>
         </a>
 
-        <br>    
+        <br>
+
+        <button onclick="captureTLPAMBERSTRICT()">Download TLP:AMBER+STRICT Banner PNG</button>
+
+        <script>
+            function captureTLPAMBERSTRICT() {
+                let div = document.getElementById("tlp-amber-strict-banner");
+    
+                // Ensure images are loaded before capturing
+                let images = div.getElementsByTagName("img");
+                let loadedImages = 0;
+    
+                function checkImagesLoaded() {
+                    loadedImages++;
+                    if (loadedImages === images.length) {
+                        html2canvas(div, {useCORS: true}).then(canvas => {
+                            let imgData = canvas.toDataURL("image/png");
+                            let link = document.createElement("a");
+                            link.href = imgData;
+                            link.download = "acep-tlp-amber-strict-banner.png";
+                            link.click();
+                        });
+                    }
+                }
+    
+                if (images.length === 0) {
+                    // No images, proceed with capture
+                    html2canvas(div, {useCORS: true}).then(canvas => {
+                        let imgData = canvas.toDataURL("image/png");
+                        let link = document.createElement("a");
+                        link.href = imgData;
+                        link.download = "acep-tlp-amber-strict-banner.png";
+                        link.click();
+                    });
+                } else {
+                    // Wait for images to load
+                    for (let img of images) {
+                        if (img.complete) {
+                            checkImagesLoaded();
+                        } else {
+                            img.onload = checkImagesLoaded;
+                            img.onerror = checkImagesLoaded;
+                        }
+                    }
+                }
+            }
+        </script>
+        
+        <br><br>
 
         <a title="TLP:AMBER - Limited disclosure, restricted to participants’ organization and its clients." href="https://www.cisa.gov/news-events/news/traffic-light-protocol-tlp-definitions-and-usage" target="_blank" style="text-decoration: none;">
             <div id="tlp-amber-banner" style="position: relative; width: 100%; left: calc(-1 * var(--body-margin-left, 0px)); padding: 0px;">
@@ -112,14 +209,63 @@
                     <!-- Right section: Logos -->
                     <div style="display: flex; gap: 10px; align-items: center;">
                         <p style="font-size: 11pt; font-family: Helvetica, Arial, sans-serif; color: #FFC000; padding: 8px;">Limited disclosure, restricted to participants’ organization and its clients.</p>
-                        <a title="Alaska Center for Energy and Power" href="https://acep.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="ACEPLogo.png" alt="ACEP Logo" style="height: 30px; width: auto;"></a>
-                        <a title="University of Alaska Fairbanks" href="https://www.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="uaflogoBlue.png" alt="UAF Logo" style="height: 30px; width: auto;"></a>
+                        <a title="Alaska Center for Energy and Power" href="https://acep.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="img/ACEPLogo.png" alt="ACEP Logo" style="height: 30px; width: auto;"></a>
+                        <a title="University of Alaska Fairbanks" href="https://www.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="img/uaflogoBlue.png" alt="UAF Logo" style="height: 30px; width: auto;"></a>
                     </div>
                 </div>
             </div>
         </a>
 
-        <br>    
+        <br>
+        
+        <button onclick="captureTLPAMBER()">Download TLP:AMBER Banner PNG</button>
+
+        <script>
+            function captureTLPAMBER() {
+                let div = document.getElementById("tlp-amber-banner");
+    
+                // Ensure images are loaded before capturing
+                let images = div.getElementsByTagName("img");
+                let loadedImages = 0;
+    
+                function checkImagesLoaded() {
+                    loadedImages++;
+                    if (loadedImages === images.length) {
+                        html2canvas(div, {useCORS: true}).then(canvas => {
+                            let imgData = canvas.toDataURL("image/png");
+                            let link = document.createElement("a");
+                            link.href = imgData;
+                            link.download = "acep-tlp-amber-banner.png";
+                            link.click();
+                        });
+                    }
+                }
+    
+                if (images.length === 0) {
+                    // No images, proceed with capture
+                    html2canvas(div, {useCORS: true}).then(canvas => {
+                        let imgData = canvas.toDataURL("image/png");
+                        let link = document.createElement("a");
+                        link.href = imgData;
+                        link.download = "acep-tlp-amber-banner.png";
+                        link.click();
+                    });
+                } else {
+                    // Wait for images to load
+                    for (let img of images) {
+                        if (img.complete) {
+                            checkImagesLoaded();
+                        } else {
+                            img.onload = checkImagesLoaded;
+                            img.onerror = checkImagesLoaded;
+                        }
+                    }
+                }
+            }
+        </script>
+
+        <br><br>
+   
 
         <a title="TLP:GREEN - Limited disclosure, restricted to the community." href="https://www.cisa.gov/news-events/news/traffic-light-protocol-tlp-definitions-and-usage" target="_blank" style="text-decoration: none;">
             <div id="tlp-green-banner" style="position: relative; width: 100%; left: calc(-1 * var(--body-margin-left, 0px)); padding: 0px;">
@@ -138,14 +284,62 @@
                     <!-- Right section: Logos -->
                     <div style="display: flex; gap: 10px; align-items: center;">
                         <p style="font-size: 11pt; font-family: Helvetica, Arial, sans-serif; color: #3dc51b; padding: 8px;">Limited disclosure, restricted to the community.</p>
-                        <a title="Alaska Center for Energy and Power" href="https://acep.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="ACEPLogo.png" alt="ACEP Logo" style="height: 30px; width: auto;"></a>
-                        <a title="University of Alaska Fairbanks" href="https://www.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="uaflogoBlue.png" alt="UAF Logo" style="height: 30px; width: auto;"></a>
+                        <a title="Alaska Center for Energy and Power" href="https://acep.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="img/ACEPLogo.png" alt="ACEP Logo" style="height: 30px; width: auto;"></a>
+                        <a title="University of Alaska Fairbanks" href="https://www.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="img/uaflogoBlue.png" alt="UAF Logo" style="height: 30px; width: auto;"></a>
                     </div>
                 </div>
             </div>
         </a>
 
         <br>
+        
+        <button onclick="captureTLPGREEN()">Download TLP:GREEN Banner PNG</button>
+
+        <script>
+            function captureTLPGREEN() {
+                let div = document.getElementById("tlp-green-banner");
+    
+                // Ensure images are loaded before capturing
+                let images = div.getElementsByTagName("img");
+                let loadedImages = 0;
+    
+                function checkImagesLoaded() {
+                    loadedImages++;
+                    if (loadedImages === images.length) {
+                        html2canvas(div, {useCORS: true}).then(canvas => {
+                            let imgData = canvas.toDataURL("image/png");
+                            let link = document.createElement("a");
+                            link.href = imgData;
+                            link.download = "acep-tlp-green-banner.png";
+                            link.click();
+                        });
+                    }
+                }
+    
+                if (images.length === 0) {
+                    // No images, proceed with capture
+                    html2canvas(div, {useCORS: true}).then(canvas => {
+                        let imgData = canvas.toDataURL("image/png");
+                        let link = document.createElement("a");
+                        link.href = imgData;
+                        link.download = "acep-tlp-green-banner.png";
+                        link.click();
+                    });
+                } else {
+                    // Wait for images to load
+                    for (let img of images) {
+                        if (img.complete) {
+                            checkImagesLoaded();
+                        } else {
+                            img.onload = checkImagesLoaded;
+                            img.onerror = checkImagesLoaded;
+                        }
+                    }
+                }
+            }
+        </script>
+
+        <br><br>
 
         <a title="TLP:CLEAR - Disclosure is not limited." href="https://www.cisa.gov/news-events/news/traffic-light-protocol-tlp-definitions-and-usage" target="_blank" style="text-decoration: none;">
             <div id="tlp-clear-banner" style="position: relative; width: 100%; left: calc(-1 * var(--body-margin-left, 0px)); padding: 0px;">
@@ -164,15 +358,62 @@
                     <!-- Right section: Logos -->
                     <div style="display: flex; gap: 10px; align-items: center;">
                         <p style="font-size: 11pt; font-family: Helvetica, Arial, sans-serif; color: #000000; padding: 8px;">Disclosure is not limited.</p>
-                        <a title="Alaska Center for Energy and Power" href="https://acep.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="ACEPLogo.png" alt="ACEP Logo" style="height: 30px; width: auto;"></a>
-                        <a title="University of Alaska Fairbanks" href="https://www.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="uaflogoBlue.png" alt="UAF Logo" style="height: 30px; width: auto;"></a>
+                        <a title="Alaska Center for Energy and Power" href="https://acep.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="img/ACEPLogo.png" alt="ACEP Logo" style="height: 30px; width: auto;"></a>
+                        <a title="University of Alaska Fairbanks" href="https://www.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="img/uaflogoBlue.png" alt="UAF Logo" style="height: 30px; width: auto;"></a>
                     </div>
                 </div>
             </div>
         </a>
      
-
         <br>
+        
+        <button onclick="captureTLPCLEAR()">Download TLP:CLEAR Banner PNG</button>
+
+        <script>
+            function captureTLPCLEAR() {
+                let div = document.getElementById("tlp-clear-banner");
+    
+                // Ensure images are loaded before capturing
+                let images = div.getElementsByTagName("img");
+                let loadedImages = 0;
+    
+                function checkImagesLoaded() {
+                    loadedImages++;
+                    if (loadedImages === images.length) {
+                        html2canvas(div, {useCORS: true}).then(canvas => {
+                            let imgData = canvas.toDataURL("image/png");
+                            let link = document.createElement("a");
+                            link.href = imgData;
+                            link.download = "acep-tlp-clear-banner.png";
+                            link.click();
+                        });
+                    }
+                }
+    
+                if (images.length === 0) {
+                    // No images, proceed with capture
+                    html2canvas(div, {useCORS: true}).then(canvas => {
+                        let imgData = canvas.toDataURL("image/png");
+                        let link = document.createElement("a");
+                        link.href = imgData;
+                        link.download = "acep-tlp-clear-banner.png";
+                        link.click();
+                    });
+                } else {
+                    // Wait for images to load
+                    for (let img of images) {
+                        if (img.complete) {
+                            checkImagesLoaded();
+                        } else {
+                            img.onload = checkImagesLoaded;
+                            img.onerror = checkImagesLoaded;
+                        }
+                    }
+                }
+            }
+        </script>
+
+        <br><br>
         
         <!-- <br>
         <hr>
@@ -237,8 +478,8 @@
                     <!-- Right section: Logos -->
                     <div style="display: flex; gap: 10px; align-items: center;">
                         <p style="font-size: 11pt; font-family: Helvetica, Arial, sans-serif; color: #000000; padding: 8px;">Disclosure is not limited.</p>
-                        <a title="Alaska Center for Energy and Power" href="https://acep.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="ACEPLogo.png" alt="ACEP Logo" style="height: 30px; width: auto;"></a>
-                        <a title="University of Alaska Fairbanks" href="https://www.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="uaflogoBlue.png" alt="UAF Logo" style="height: 30px; width: auto;"></a>
+                        <a title="Alaska Center for Energy and Power" href="https://acep.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="img/ACEPLogo.png" alt="ACEP Logo" style="height: 30px; width: auto;"></a>
+                        <a title="University of Alaska Fairbanks" href="https://www.uaf.edu/" target="_blank" style="text-decoration: none;"><img src="img/uaflogoBlue.png" alt="UAF Logo" style="height: 30px; width: auto;"></a>
                     </div>
                 </div>
             </div>
